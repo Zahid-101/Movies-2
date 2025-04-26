@@ -1,0 +1,130 @@
+body {
+    background: #f7f7fa;
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    padding: 0;
+    min-height: 100vh;
+  }
+  .container {
+    max-width: 450px;
+    margin: 40px auto;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+    padding: 32px 24px 24px 24px;
+  }
+  h1 {
+    text-align: center;
+    font-size: 1.7rem;
+    margin: 0 0 18px 0;
+    color: #353e5c;
+  }
+  .legend {
+    text-align: center;
+    margin: 18px 0;
+  }
+  .legend-item {
+    display: inline-block;
+    margin: 0 12px;
+    font-size: 0.98rem;
+  }
+  .legend-box {
+    width: 18px; height: 18px;
+    display: inline-block;
+    border-radius: 4px;
+    margin-right: 5px;
+    vertical-align: middle;
+  }
+  .legend-box.available { background: #84e39a; border: 1px solid #70ca84;}
+  .legend-box.selected  { background: #398ffd; border: 1px solid #2464c3;}
+  .legend-box.booked    { background: #c2c4cb; border: 1px solid #888;}
+  
+  .seating-area {
+    display: grid;
+    grid-template-columns: 32px repeat(8,38px); /* room for row label */
+    grid-auto-rows: 38px;
+    gap: 8px 8px;
+    justify-content: center;
+    margin: 26px 0;
+  }
+  .row-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #747b96;
+    font-weight: 500;
+    font-size: 1rem;
+  }
+  .seat {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #84e39a;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 0.97rem;
+    color: #23343b;
+    border: none;
+    outline: none;
+    transition: background 0.12s;
+    box-shadow: 0 1.5px 3.5px rgba(64,105,80,0.09);
+    user-select: none;
+    position: relative;
+  }
+  .seat.selected {
+    background: #398ffd;
+    color: #fff;
+  }
+  .seat.booked {
+    background: #c2c4cb;
+    color: #9399a3;
+    cursor: not-allowed;
+    text-decoration: line-through;
+  }
+  .col-label {
+    text-align: center;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #767e97;
+  }
+  .screen {
+    margin: 0 auto 22px auto;
+    width: 80%;
+    height: 13px;
+    background: #bccfdc;
+    border-radius: 7px 7px 22px 22px/10px 10px 30px 30px;
+    box-shadow: 0 2px 9px #d1eaff8f;
+  }
+  .selection-bar {
+    text-align: center;
+    margin-top: 18px;
+    background: #f5f9ff;
+    border-radius: 8px;
+    padding: 11px 0;
+    font-size: 1.08rem;
+  }
+  #time-selector {
+    text-align: center;
+    margin-top: 18px;
+    background: #f5f9ff;
+    border-radius: 8px;
+    padding: 11px 0;
+    font-size: 1.08rem;
+  }
+  .seat-widget {
+    margin top: 24px;
+    background: #fff;
+    border-radius: 14px;
+    padding: 20px 16px;
+    box-shadow: 0 6px 28px rgba(24,36,74,.15);
+    min-width: 320px;   /* Adjust as needed */
+    max-width: 98vw;    /* Responsive safety */
+    max-height: 90vh;
+    overflow-y: auto;
+}
+  @media (max-width: 550px) {
+    .container { max-width: 98vw; padding: 14px; }
+    .seating-area { gap: 6px 3px; grid-template-columns: 22px repeat(8,28px);}
+    .seat { font-size: 0.82rem;}
+    .row-label { font-size: 0.92rem;}
+  }

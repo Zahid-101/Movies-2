@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles\pharmacies.css" />
+    <link rel="stylesheet" href="Styles\seat.css" />
+    <title>Order</title>
+  </head>
+  <body>
+    <header></header>
+
+    <div class="EvWrapper" id="EvWrapper">
+      <div>
+        <table id="check">
+          <tr>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Quantity</th>
+            <th>Price</th>
+          </tr>
+          <tbody id="checkbod"></tbody>
+          <tfoot>
+            <tr>
+              <td></td>
+              <td></td>
+              <td>Total Price</td>
+              <td id="checkfoot"></td>
+            </tr>
+          </tfoot>
+        </table>
+        <div class="seat-widget">
+          <div class="container">
+            <h1>Choose Your Seats</h1>
+            <div class="legend">
+              <span class="legend-item"
+                ><span class="legend-box available"></span>Available</span
+              >
+              <span class="legend-item"
+                ><span class="legend-box selected"></span>Selected</span
+              >
+              <span class="legend-item"
+                ><span class="legend-box booked"></span>Booked</span
+              >
+            </div>
+            <div class="screen"></div>
+            <!-- Column labels -->
+            <div
+              style="
+                display: grid;
+                grid-template-columns: 32px repeat(8, 38px);
+                width: fit-content;
+                margin: 0 auto 2px auto;
+              "
+            >
+              <div></div>
+              <div class="col-label">1</div>
+              <div class="col-label">2</div>
+              <div class="col-label">3</div>
+              <div class="col-label">4</div>
+              <div class="col-label">5</div>
+              <div class="col-label">6</div>
+              <div class="col-label">7</div>
+              <div class="col-label">8</div>
+            </div>
+            <div id="seating-area" class="seating-area"></div>
+            <div id="selection-bar" class="selection-bar">
+              Selected Seats: <span id="selected-seats">None</span>
+            </div>
+            <select id="time-selector">
+              <option value="10:00 AM">10:00 AM</option>
+              <option value="12:30 PM">12:30 PM</option>
+              <option value="3:00 PM">3:00 PM</option>
+              <option value="7:15 PM">7:15 PM</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="form">
+        <form id="form">
+          <div class="set">
+            <div class="subheading">Personal <br />Information</div>
+            <label for="fname">First Name: </label>
+            <input type="text" id="fname" name="fname" required />
+
+            <label for="lname">Last Name: </label>
+            <input type="text" id="lname" name="lname" required />
+
+            <label for="t-no">Phone Number: </label>
+            <input
+              type="tel"
+              name="t-no"
+              id="t-no"
+              pattern="[0-9]{10}"
+              required
+            />
+
+            <label for="email">Email Address: </label>
+            <input type="email" name="email" id="email" required />
+          </div>
+
+          <div class="subheading">Billing Information</div>
+          <div class="billing set">
+            <label id="pay" class="head-label">Payment Method</label>
+            <div class="pay-meth">
+              <div>
+                <input
+                  type="radio"
+                  name="pay-meth"
+                  id="credit-card"
+                  value="card"
+                  required
+                />
+                <label for="credit-card">Credit/Debit Card</label>
+              </div>
+              <div>
+                <input
+                  type="radio"
+                  name="pay-meth"
+                  id="COD"
+                  value="cash"
+                  required
+                />
+                <label for="COD">Cash at Store</label>
+              </div>
+            </div>
+            <div class="set" id="carddeets">
+              <label for="CardNo">Card Number:</label>
+              <input
+                type="text"
+                name="CardNo"
+                id="CardNo"
+                placeholder="xxxx-xxxx-xxxx-xxxx"
+              />
+              <label for="CvNo">CVV</label>
+              <input type="text" name="CardNo" id="CvNo" />
+              <label for="ExpDate">Expiration Date</label>
+              <input type="date" name="ExpDate" id="ExpDate" />
+            </div>
+          </div>
+          <div class="set">
+            <label for="city" id="select">Movie Branch : </label>
+            <select name="city" id="city">
+              <option value="Kandy">Kandy</option>
+              <option value=" Matale">Matale</option>
+              <option value=" Nuwara Eliy">Nuwara Eliya</option>
+              <option value="Ampara ">Ampara</option>
+              <option value="Batticaloa">Batticaloa</option>
+              <option value="Galle">Galle</option>
+              <option value=" Matara">Matara</option>
+              <option value="Badulla">Badulla</option>
+              <option value="Colombo">Colombo</option>
+              <option value=" Gampaha">Gampaha</option>
+              <option value=" Kalutara">Kalutara</option>
+            </select>
+            <label for="sec-phone">Secondary phone number(optional)</label>
+            <input type="tel" name="sec-phone" id="sec-phone" />
+            <button type="submit" id="payport">Pay</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script src="seat.js" defer></script>
+    <script src="check.js" defer></script>
+  </body>
+</html>
